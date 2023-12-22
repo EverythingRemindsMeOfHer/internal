@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-gap: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <div class="container">
+            <div>
+                <label for="name1">Name of yashwanth</label>
+                <input type="text" id="name1" name="name1">
+            </div>
+            <div>
+                <label for="name2">Name:</label>
+                <input type="text" id="name2" name="name2">
+            </div>
+            <div>
+                <label for="name3">Name</label>
+                <input type="text" id="name3" name="name3">
+            </div>
+            <!-- Add more divs as needed -->
+        </div>
+    </form>
+</body>
+</html>

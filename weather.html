@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function loadData() {
+            var key = "d84706726562fdbc7feabeb1ed1f2a98";
+            var city = document.getElementById("i1").value;
+            var url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}`
+            var p = fetch(url);
+            p.then(function (response) {
+                return response.json();
+            }).then(function (data) {
+                console.log(data);
+                let n = "Name:" + data.name;
+                let t = "<br>temperature" + data.main.temp;
+                let h = "<br>Humidity:" + data.main.humidity;
+                let desc = "<br>description:" + data.weather[0].description;
+                document.getElementById("i2").innerHTML = n + t + h + desc;
+            });
+            p.catch(function (error) {
+                console.log(error);
+
+            });
+        }
+    </script>
+    Enter city Name:<input type="text" name="tt" id="i1">
+    <input type="button" value="Get Weather Data" onclick="loadData()">
+    <h2 id="i2"></h2>
+</body>
+
+</html>
